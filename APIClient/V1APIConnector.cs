@@ -10,6 +10,15 @@ namespace VersionOne.SDK.APIClient {
 
     public class V1APIConnector : V1CredsAPIConnector
     {
+        /// <summary>
+        /// Create a new VersionOne server connector.
+        /// </summary>
+        /// <param name="urlPrefix">The base URL of the server</param>
+        /// <param name="username">Used for Basic authorization responses (and NTLM/Negotiate if integratedAuth=true)</param>
+        /// <param name="password">Used for Basic authorization responses (and NTLM/Negotiate if integratedAuth=true)</param>
+        /// <param name="integratedAuth">Whether to try NTLM/Negotiate auth.  If Username is provided, it and the password will be used for the exchange. Otherwise the implicit Windows identity will be used.</param>
+        /// <param name="proxy">A proxy to use for HTTP connections.</param>
+        /// <param name="storage">If provider, enables response to OAuth2 Bearer challenges.</param>
 		public V1APIConnector(string urlPrefix, string username = null, string password = null, bool? integratedAuth = null, 
 		                      ProxyProvider proxy = null, OAuth2Client.IStorage storage = null)
             : base(urlPrefix, new CredentialCache(), proxy)
@@ -31,7 +40,7 @@ namespace VersionOne.SDK.APIClient {
                     s.GetSecrets();
                     oauth2storage = s;
                 }
-                catch (System.IO.FileNotFoundException ex)
+                catch (System.IO.FileNotFoundException)
                 {
                     // swallowed - meaning no oauth2 secrets configured.
                 }
@@ -48,7 +57,7 @@ namespace VersionOne.SDK.APIClient {
                     );
             }
 
-			if(username == null)
+			if(String.IsNullOrEmpty(username))
             {
                 if (integratedAuth.GetValueOrDefault(true))
                 { // no constructor args - so use default integrated identity unless they say no.
