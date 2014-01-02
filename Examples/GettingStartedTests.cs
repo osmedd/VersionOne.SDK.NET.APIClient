@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
-using VersionOne.SDK.APIClient.Examples;
 
-namespace VersionOne.SDK.APIClient.Tests.ExamplesTests
+namespace VersionOne.SDK.APIClient.Examples
 {
     [TestFixture]
     public class GettingStartedTests

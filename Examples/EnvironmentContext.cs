@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace VersionOne.SDK.APIClient
+namespace VersionOne.SDK.APIClient.Examples
 {
-    public sealed class EnvironmentContext
+    public class EnvironmentContext
     {
 
         private readonly IModelsAndServices _modelsAndServices;

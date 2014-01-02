@@ -1,4 +1,4 @@
-﻿namespace VersionOne.SDK.APIClient
+﻿namespace VersionOne.SDK.APIClient.Examples
 {
 
     public interface  IUrls
@@ -13,7 +13,7 @@
     /// <summary>
     /// Retrieves url information from the executing assemblies .config file.
     /// </summary>
-    public sealed class Urls : IUrls
+    public  class Urls : IUrls
     {
 
         private string _v1Url;
@@ -68,6 +68,20 @@
                 if (string.IsNullOrEmpty(_configUrl) == false) return _configUrl;
                 _configUrl = string.Concat(V1Url, V1ConfigurationManager.GetValue(Settings.ConfigUrl, "config.v1/"));
                 return _configUrl;
+            }
+        }
+    }
+
+    public class OAuth2Urls : Urls
+    {
+        private string _dataUrl;
+        public new string DataUrl
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_dataUrl) == false) return _dataUrl;
+                _dataUrl = string.Concat(V1Url, V1ConfigurationManager.GetValue(Settings.DataUrl, "rest-1.oauth.v1/"));
+                return _dataUrl;
             }
         }
     }

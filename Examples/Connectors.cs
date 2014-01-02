@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VersionOne.SDK.APIClient
+namespace VersionOne.SDK.APIClient.Examples
 {
     /// <summary>
     /// Provides connectors for a VersionOne instance.
@@ -15,7 +15,7 @@ namespace VersionOne.SDK.APIClient
 		IAPIConnector ConfigurationConnectorWithProxy { get; }
     }
 
-    public sealed class Connectors : IConnectors
+    public class Connectors : IConnectors
     {
 
         private readonly IUrls _urls;

@@ -158,13 +158,9 @@
     <Compile Include="Config.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Examples\GettingStarted.cs" />
+    <Compile Include="V1Central.cs" />
     <Compile Include="V1CredsAPIConnector.cs" />
     <Compile Include="V1ConfigurationManager.cs" />
-    <Compile Include="Connectors.cs" />
-    <Compile Include="Credentials.cs" />
-    <Compile Include="EnvironmentContext.cs" />
-    <Compile Include="ModelsAndServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -182,7 +178,6 @@
     <Compile Include="Query\ValueProvider.cs" />
     <Compile Include="Query\ValueStringizer.cs" />
     <Compile Include="SingleValueAttribute.cs" />
-    <Compile Include="Urls.cs" />
     <Compile Include="V1Oauth2APIConnector.cs" />
     <Compile Include="XmlApiWriter.cs">
       <SubType>Code</SubType>
@@ -278,9 +273,6 @@
     <Compile Include="V1APIConnector.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="V1Central.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="V1Configuration.cs" />
     <Compile Include="V1ConnectionValidator.cs">
       <SubType>Code</SubType>
@@ -310,10 +302,14 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Examples\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>rem copy $(ProjectDir)app.config $(TargetPath).config</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>

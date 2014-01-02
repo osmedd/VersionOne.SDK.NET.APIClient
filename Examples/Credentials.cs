@@ -1,4 +1,4 @@
-﻿namespace VersionOne.SDK.APIClient
+﻿namespace VersionOne.SDK.APIClient.Examples
 {
 
     public interface ICredentials
@@ -12,7 +12,7 @@
     /// <summary>
     /// Retrieves credential information from the executing assemblies .config file.
     /// </summary>
-    public sealed class Credentials : ICredentials
+    public class Credentials : ICredentials
     {
 
         private string _v1UserName;

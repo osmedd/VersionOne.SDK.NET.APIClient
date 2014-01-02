@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using VersionOne.SDK.APIClient.Examples;
 
 namespace VersionOne.SDK.APIClient.Tests.UtilityTests
 {

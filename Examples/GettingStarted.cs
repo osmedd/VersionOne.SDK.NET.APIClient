@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace VersionOne.SDK.APIClient.Examples
 {
-    public sealed class GettingStarted
+    public class GettingStarted
     {
 
         private readonly EnvironmentContext _context;

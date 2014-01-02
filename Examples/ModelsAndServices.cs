@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VersionOne.SDK.APIClient
+namespace VersionOne.SDK.APIClient.Examples
 {
 
     public interface IModelsAndServices
@@ -13,7 +13,7 @@ namespace VersionOne.SDK.APIClient
         IV1Configuration V1ConfigurationWithProxy { get; }
     }
 
-    public sealed class ModelsAndServices : IModelsAndServices
+    public class ModelsAndServices : IModelsAndServices
     {
 
         private readonly IConnectors _connectors;

@@ -162,7 +162,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExamplesTests\GettingStartedTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -197,8 +196,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ProxyTester.cs" />
-    <Compile Include="QueryTests\QueryBuilderTests\FindBuilderTester.cs" />
-    <Compile Include="QueryTests\QueryFindTester.cs" />
     <Compile Include="ServicesTests\MultiValueAttributeTester.cs" />
     <Compile Include="MetaTests\OperationTester.cs">
       <SubType>Code</SubType>
@@ -221,14 +218,10 @@
     </Compile>
     <Compile Include="UtilityTests\AssetStateManagerTester.cs" />
     <Compile Include="UtilityTests\V1ConfigurationManagerTester.cs" />
-    <Compile Include="UtilityTests\ConnectorsTester.cs" />
-    <Compile Include="UtilityTests\CredentialsTester.cs" />
     <Compile Include="UtilityTests\DurationTester.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UtilityTests\EnvironmentContextTester.cs" />
     <Compile Include="UtilityTests\MimeTypeTester.cs" />
-    <Compile Include="UtilityTests\ModelsAndServicesTester.cs" />
     <Compile Include="UtilityTests\OidTester.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -236,7 +229,6 @@
     <Compile Include="UtilityTests\TextBuilderTester.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UtilityTests\UrlsTester.cs" />
     <Compile Include="UtilityTests\V1ConfigurationTester.cs" />
     <Content Include="SingleTestData.xml" />
     <EmbeddedResource Include="TestData.xml" />
@@ -276,10 +268,15 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExamplesTests\" />
+    <Folder Include="QueryTests\QueryBuilderTests\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>rem copy /Y $(ProjectDir)TestData.xml .</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace VersionOne.SDK.APIClient.Tests.UtilityTests
+namespace VersionOne.SDK.APIClient.Examples
 {
     [TestFixture]
     public class ConnectorsTester
